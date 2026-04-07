@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samruddhi Mane | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <h2>My Portfolio</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Samruddhi Mane</span></h1>
+        <h2 class="typing-text">I'm a <span id="typing"></span></h2>
+        <p>I design and build beautiful modern websites.</p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">View Work</a>
+            <a href="#contact" class="btn outline">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+
+    <div class="about-container">
+
+        <!-- LEFT: IMAGE -->
+        <div class="about-image">
+            <img src="WhatsApp Image 2026-04-05 at 5.34.01 PM.jpeg" alt="Samruddhi Mane">
+        </div>
+
+        <!-- RIGHT: TEXT -->
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate student learning web development using HTML, CSS, JavaScript.
+                I love creating modern and user-friendly websites.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section id="skills" class="section alt">
+    <h2>Skills</h2>
+    <div class="cards">
+        <div class="card">HTML & CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Application of data structure using C </div>
+        <div class="card">Java</div>
+        <div class="card">c</div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="project-container">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h3>To design and develop cloth dryer</h3>
+            <img src="clothdry.png" alt="">
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h3>Professional website with modern UI.</h3>
+            <img src="sm.png" alt="">
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <h3>Online Voting System for Transparent Governance</h3>
+            <img src="voting.png" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2 class="contact-title">Contact</h2>
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-info">
+
+            <h4>EMAIL</h4>
+            <p>2403045@ritindia.edu</p>
+
+            <h4>PHONE</h4>
+            <p>+91 7777777777</p>
+
+            <h4>ADDRESS</h4>
+            <p>A/P Satapewadi  Tal: Walwa Dist: Sangli</p>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-form">
+
+            <form>
+                <div class="row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <textarea placeholder="Message" rows="6" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <p>© 2026 Samruddhi Mane</p>
+
+    <h3 class="follow-text">Follow Me</h3>
+
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+</footer>
+
+<script>
+const roles = ["Web Developer", "Student", "Creative Designer"];
+let i = 0, j = 0, current = "", deleting = false;
+
+function type() {
+    let word = roles[i];
+    current = deleting ? word.substring(0, j--) : word.substring(0, j++);
+    document.getElementById("typing").textContent = current;
+
+    if (!deleting && j === word.length) {
+        deleting = true;
+        setTimeout(type, 1000);
+        return;
+    }
+
+    if (deleting && j === 0) {
+        deleting = false;
+        i = (i + 1) % roles.length;
+    }
+
+    setTimeout(type, deleting ? 50 : 100);
+}
+type();
+</script>
+
+</body>
+</html>
